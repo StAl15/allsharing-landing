@@ -2,6 +2,7 @@ import React from 'react';
 import FlexRow from "../Row/FlexRow";
 import FlexColumn from "../Column/FlexColumn";
 import Text from "../Text/Text";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Footer = () => {
     return (
@@ -29,7 +30,7 @@ const Footer = () => {
                 </FlexRow>
                 <FlexColumn className={'items-end space-y-2'}>
                     <Text>Перейти на платформу</Text>
-                    <img src={'images/logo.svg'}/>
+                    <LazyLoadImage src={'images/logo.svg'}/>
                 </FlexColumn>
             </FlexRow>
             <FlexRow className={'self-center space-x-12'}>

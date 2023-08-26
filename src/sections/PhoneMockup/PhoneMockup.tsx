@@ -3,6 +3,7 @@ import FlexColumn from "../../components/Column/FlexColumn";
 import Text from "../../components/Text/Text";
 import Button from "../../components/Button/Button";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const PhoneMockup: React.FC = () => {
     return (
@@ -17,7 +18,7 @@ const PhoneMockup: React.FC = () => {
                     </Text>
                 </Button>
             </FlexColumn>
-            <img className={'absolute right-0 bottom-0 z-0'} src={'/images/mockup.svg'}/>
+            <LazyLoadImage className={'absolute right-0 bottom-0 z-0'} src={'/images/mockup.svg'}/>
         </Wrapper>
     );
 };
