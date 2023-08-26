@@ -3,13 +3,15 @@ import FlexRow from "../Row/FlexRow";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import Skeleton from "react-loading-skeleton";
 
 
 const Header: FC = () => {
     return (
         <FlexRow className={'w-full z-10 max-w-[1440px] items-center justify-between sticky top-0'}>
             <FlexRow className={'items-center space-x-10'}>
-                <LazyLoadImage src={'/images/logo.svg'}
+                <LazyLoadImage placeholder={<span className="loading loading-spinner loading-lg"></span>}
+ src={'/images/logo.svg'}
                                className={'w-[4.4375rem] h-[3.875rem]'}
                                alt="logo"
                 />

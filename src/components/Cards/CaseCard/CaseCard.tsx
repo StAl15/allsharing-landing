@@ -5,6 +5,7 @@ import FlexRow from "../../Row/FlexRow";
 import clsx from "clsx";
 import {twMerge} from "tailwind-merge";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import Skeleton from "react-loading-skeleton";
 
 export interface CaseCardProps {
     title: string;
@@ -33,7 +34,8 @@ const CaseCard: FC<CaseCardProps> = ({imgUrl, position = 'lt', className, desc, 
         <FlexRow className={twMerge(clsx('space-x-12 items-center', className))}>
             <FlexColumn
                 className={`relative w-1/2 h-[24.125rem] relative`}>
-                <LazyLoadImage src={imgUrl} className={'absolute w-full h-full'}/>
+                <LazyLoadImage placeholder={<span className="loading loading-spinner loading-lg"></span>}
+ src={imgUrl} className={'absolute w-full h-full'}/>
                 <Text
                     className={twMerge(clsx('uppercase absolute m-12 text-white text-[1.875rem] font-[Nunito-Semibold]', getPosition()))}>
                     {title}

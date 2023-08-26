@@ -4,6 +4,7 @@ import Text from "../../components/Text/Text";
 import Button from "../../components/Button/Button";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import Skeleton from "react-loading-skeleton";
 
 const PhoneMockup: React.FC = () => {
     return (
@@ -18,7 +19,8 @@ const PhoneMockup: React.FC = () => {
                     </Text>
                 </Button>
             </FlexColumn>
-            <LazyLoadImage className={'absolute right-0 bottom-0 z-0'} src={'/images/mockup.svg'}/>
+            <LazyLoadImage placeholder={<span className="loading loading-spinner loading-lg"></span>}
+ className={'absolute right-0 bottom-0 z-0'} src={'/images/mockup.svg'}/>
         </Wrapper>
     );
 };

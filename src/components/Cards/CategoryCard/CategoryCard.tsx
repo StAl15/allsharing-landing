@@ -5,6 +5,7 @@ import Button from "../../Button/Button";
 import clsx from "clsx";
 import {twMerge} from "tailwind-merge";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import Skeleton from "react-loading-skeleton";
 
 export interface CategoryProps {
     categories: string[];
@@ -19,7 +20,8 @@ const CategoryCard: React.FC<CategoryProps> = ({imgSrc, id, className, categorie
         <FlexColumn
             id={id}
             className={twMerge(clsx(`bg-center justify-between p-10 bg-no-repeat bg-cover relative w-[20rem] h-[30rem]`, className))}>
-            <LazyLoadImage src={imgSrc} className={'absolute w-full h-full top-0 left-0 right-0 bottom-0'}/>
+            <LazyLoadImage placeholder={<span className="loading loading-spinner loading-lg"></span>}
+ src={imgSrc} className={'absolute w-full h-full top-0 left-0 right-0 bottom-0'}/>
             <pre className={'text-white font-[Nunito-Regular] text-[0.9375rem] leading-normal'}>
                {categories.reduce((it, acc) => it += acc + '\n', '')}
             </pre>
